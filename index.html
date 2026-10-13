@@ -341,6 +341,7 @@ main{flex:1;width:100%;max-width:1180px;margin:0 auto;padding:0 24px 80px}
 .q-feedback .fb-correct{font-size:13.5px;margin-bottom:12px;color:var(--text)}
 .q-feedback .fb-correct b{color:var(--ok)}
 .q-feedback .fb-sym{display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+.q-feedback .fb-body{flex:1;min-width:0}
 .q-feedback .fb-art{background:var(--paper);border-radius:10px;width:74px;height:74px;flex:none;display:grid;place-items:center}
 .q-feedback .fb-art svg,.q-feedback .fb-art img{width:54px;height:54px;object-fit:contain}
 .q-feedback .fb-sym .n{font-weight:800;font-size:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:5px}
@@ -377,7 +378,8 @@ main{flex:1;width:100%;max-width:1180px;margin:0 auto;padding:0 24px 80px}
 .review .row.bad .ix{background:var(--bad-soft);color:var(--bad);border-color:rgba(248,81,73,.4)}
 .review .row .art{background:var(--paper);border-radius:8px;width:52px;height:52px;flex:none;display:grid;place-items:center}
 .review .row .art svg,.review .row .art img{width:38px;height:38px;object-fit:contain}
-.review .row .txt b{display:block;font-size:13.5px;margin-bottom:2px}
+.review .row .txt{min-width:0}
+.review .row .txt b{display:block;font-size:13.5px;margin-bottom:2px;overflow-wrap:break-word}
 .review .row .txt .ans{color:var(--muted)}
 .review .row .txt .ans .good{color:var(--ok);font-weight:700}
 .review .row .txt .ans .miss{color:var(--bad);font-weight:700}
@@ -408,6 +410,11 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg2)}
   .q-symbol{width:170px;height:170px}
   .q-symbol svg,.q-symbol img{width:120px;height:120px}
   .modal .m-head{flex-wrap:wrap}
+}
+@media (max-width:480px){
+  .q-feedback .fb-sym{flex-direction:column}
+  .q-card{padding:20px 16px}
+  .q-feedback{padding:16px 14px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -1215,7 +1222,7 @@ function answer(idx) {
     const s = q.symbol, st = STATUS[s.st];
     symHtml = `
       <div class="fb-art">${artOf(s)}</div>
-      <div class="fb-sym">
+      <div class="fb-body">
         <div class="n">${s.name} <span class="badge ${s.st}">${st.short}</span> <span class="tag">${CATS[s.cat].short}</span></div>
         <p>${s.def}</p>
         <p style="margin-top:6px">${s.ctx}</p>
