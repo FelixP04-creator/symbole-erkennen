@@ -411,10 +411,44 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg2)}
   .q-symbol svg,.q-symbol img{width:120px;height:120px}
   .modal .m-head{flex-wrap:wrap}
 }
+/* kompakt: alles soll auf dem Smartphone ohne langes Scrollen in einen Blick passen */
 @media (max-width:480px){
-  .q-feedback .fb-sym{flex-direction:column}
-  .q-card{padding:20px 16px}
-  .q-feedback{padding:16px 14px}
+  .nav{flex-wrap:nowrap;padding:9px 12px;gap:8px}
+  .brand>span:last-child{display:none}
+  nav.tabs{margin-left:auto;width:auto;overflow-x:auto}
+  nav.tabs button{font-size:13px;padding:7px 11px;white-space:nowrap}
+  main{padding:0 14px 60px}
+  .quiz-setup,.quiz-stage{margin-top:22px}
+  .q-progress{margin-bottom:10px}
+  .q-card{padding:16px 14px}
+  .q-type{margin-bottom:12px}
+  .q-symbol{width:120px;height:120px;margin:0 auto 16px}
+  .q-symbol svg,.q-symbol img{width:88px;height:88px}
+  .q-question{font-size:15.5px;margin-bottom:14px}
+  .q-statement{font-size:16.5px;margin:8px 0 16px}
+  .q-options{gap:8px}
+  .q-option{padding:11px 12px;font-size:14px}
+  .q-option .key{width:24px;height:24px}
+  .q-feedback{margin-top:14px;padding:14px 12px}
+  .q-feedback .fb-head{margin-bottom:8px;font-size:15px}
+  .q-feedback .fb-correct{margin-bottom:10px}
+  .q-feedback .fb-sym{flex-direction:column;gap:8px;padding-top:10px;margin-top:10px}
+  .q-feedback .fb-art{width:56px;height:56px}
+  .q-feedback .fb-art svg,.q-feedback .fb-art img{width:40px;height:40px}
+  .q-feedback .fb-sym p{line-height:1.45}
+  .q-feedback .fb-next{margin-top:10px}
+  .q-feedback .fb-correct{margin-bottom:8px}
+  .q-card.answered .q-symbol{display:none}
+  .q-card.answered .q-type{display:none}
+  .q-card.answered .q-question,.q-card.answered .q-statement{display:none}
+  .q-card.answered .q-option{padding:7px 12px;font-size:13px;line-height:1.4}
+  .q-card.answered .q-feedback .fb-correct{display:none}
+  .q-card.answered .q-feedback .fb-art{width:44px;height:44px}
+  .q-card.answered .q-feedback .fb-art svg,.q-card.answered .q-feedback .fb-art img{width:32px;height:32px}
+  .q-card.answered .q-feedback .fb-sym p{font-size:12.5px;line-height:1.4}
+  .q-card.answered{padding-top:14px}
+  .r-hero{padding:24px 16px}
+  .r-hero .pct{font-size:52px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -1183,6 +1217,7 @@ function renderQuestion() {
     `</div>`;
   $("#q-top").innerHTML = top;
   $("#q-feedback-slot").innerHTML = "";
+  document.querySelector("#quiz-play .q-card").classList.remove("answered");
 
   $$("#q-top .q-option").forEach(btn => {
     btn.onclick = () => answer(+btn.dataset.idx);
@@ -1237,6 +1272,7 @@ function answer(idx) {
       <div class="fb-sym">${symHtml}</div>
       <div class="fb-next"><button class="btn btn-primary btn-sm" id="q-next">${last ? "Ergebnis anzeigen →" : "Weiter →"}</button></div>
     </div>`;
+  document.querySelector("#quiz-play .q-card").classList.add("answered");
   const next = $("#q-next");
   next.onclick = nextQ;
   next.focus();
