@@ -30,6 +30,28 @@ Interaktive Website mit **Symbolatlas** (51 Erkennungszeichen der rechtsextremen
     └── fonts/               ← 4 Schriften (woff2, Base64 eingebettet)
 ```
 
+## 📱 Inhalte am iPhone/iPad ändern – ganz ohne Installation
+
+Das ist der einfache Weg (z. B. auf dem iPad oder iPhone, direkt im Browser):
+
+1. Öffne in Safari: **https://github.com/FelixP04-creator/symbole-erkennen**
+2. Gehe in den Ordner **`src`** und tippe auf **`index.template.html`**
+3. Tippe oben auf das **Bleistift-Symbol** ✏️ (Web-Editor)
+4. Ändere die Texte (alle Inhalte stehen in dieser Datei, siehe unten)
+5. Unten: **„Commit changes“** tippen (eine kurze Beschreibung eingeben)
+
+**Fertig.** GitHub baut die Seite automatisch neu (GitHub Actions, dauert
+wenige Minuten) und die neue Website ist live – ohne dass irgendetwas
+installiert oder gebaut werden muss.
+
+Unter der Repo-Adresse → Reiter **„Actions“** siehst du, ob der Build
+grün durchgelaufen ist. Danach (1–2 Min.) ist die Änderung unter
+https://felixp04-creator.github.io/symbole-erkennen/ sichtbar.
+
+> **Tipp mit KI:** Lass deine KI die geänderten Textblöcke (z. B. neue
+> `def:`/`ctx:`-Sätze) fertig formulieren und kopiere sie einfach in den
+> Editor. Der Aufbau ist in „Die wichtigsten Blöcke“ unten dokumentiert.
+
 ## Inhalte ändern (z. B. mit einer KI)
 
 **Alle Inhalte stecken in einer Datei: `src/index.template.html`.**
@@ -75,7 +97,15 @@ Neue Symbole: Eintrag in `SYMBOLS` + Bild in `src/crops/` + Zeile in `ART` mit
   why:"Nein. Der Thorshammer ist auch in der Metal-Szene …" },
 ```
 
-## Nach Änderungen: bauen & veröffentlichen
+## Nach Änderungen: veröffentlichen
+
+**Normalweg (am iPhone/iPad oder Desktop-Browser):**
+Änderung in `src/` committen → **der Build läuft automatisch** (GitHub Actions,
+siehe `.github/workflows/build.yml`) → `index.html` wird neu erzeugt und
+committet → nach 1–2 Minuten ist die Änderung live. URL und QR-Code bleiben
+unverändert. Den Build-Status siehst du im Reiter **„Actions“** der Repo.
+
+**Manuell (nur wenn du die Seite lokal testen willst):**
 
 Voraussetzung: [Node.js](https://nodejs.org/)
 
@@ -94,9 +124,6 @@ git add index.html
 git commit -m "Inhalt angepasst: …"
 git push
 ```
-
-Nach dem `git push` dauert es ca. 1–2 Minuten, bis GitHub Pages die neue Seite
-unter der Live-URL ausliefert (URL und QR-Code bleiben unverändert).
 
 ## Wichtige Regeln beim Bearbeiten
 

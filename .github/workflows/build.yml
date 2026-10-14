@@ -1,0 +1,36 @@
+# Erzeugt automatisch die fertige index.html, sobald sich etwas in src/ ändert.
+# Dadurch reicht zum Veröffentlichen: Datei im Browser bearbeiten + Commit.
+# Der Build läuft hier (Node.js), ganz ohne Installation auf dem eigenen Gerät.
+name: Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - ".github/workflows/build.yml"
+
+# mehrere Pushes in kurzer Zeit: nacheinander, nicht parallel
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: index.html bauen
+        run: node src/build.js
+      - name: Ergebnis committen (nur wenn sich etwas geändert hat)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "build: index.html aus src/ neu erzeugt (automatisch)"
+            git push
+          fi
