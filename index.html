@@ -543,7 +543,7 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg2)}
     <div class="status-grid">
       <div class="status-card s-verboten">
         <h3><span style="color:var(--red)">■</span> In Deutschland verboten</h3>
-        <p>Das Symbol darf in der Öffentlichkeit grundsätzlich nicht verwendet werden – etwa Hakenkreuz, SS-Runen oder das Logo der verbotenen Organisation Blood&nbsp;&amp;&nbsp;Honour.</p>
+        <p>Das Symbol darf in der Öffentlichkeit grundsätzlich nicht verwendet werden – etwa das Hakenkreuz, das SS-Zeichen oder das Logo der verbotenen Organisation Blood&nbsp;&amp;&nbsp;Honour.</p>
         <span class="law">§ 86a StGB</span>
       </div>
       <div class="status-card s-kontext">
@@ -654,8 +654,8 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg2)}
     <div class="info">
       <div class="block">
         <h2>Was sagt das Gesetz? (§ 86 / 86a StGB)</h2>
-        <p>§&nbsp;86a StGB verbietet die Verwendung von <b>Symbolen verfassungswidriger Organisationen</b> – dazu zählen Hakenkreuz, SS-Runen, der Totenkopf und weitere NS-Zeichen, wenn ihre Verwendung „die Würde der Menschen zu verletzen und den Bestand der durch die Demokratie geordneten Freiheit zu gefährden geeignet“ ist.</p>
-        <p>Daneben können ganze <b>Organisationen verboten</b> sein (z.&nbsp;B. Blood&nbsp;&amp;&nbsp;Honour, HDJ) – ihre Embleme fallen dann ebenfalls unter das Verbot.</p>
+        <p>§&nbsp;86a StGB verbietet die Verwendung von <b>Kennzeichen verfassungswidriger Organisationen</b> – dazu zählen Hakenkreuz, SS-Zeichen, der Totenkopf und weitere NS-Kennzeichen. Strafrelevant ist das öffentliche Verwenden: in der Öffentlichkeit, in einer Versammlung oder in Schriften und Abbildungen, die verbreitet werden. Daneben regelt §&nbsp;86 StGB die <b>Propagandamittel</b> der NS-Zeit (z.&nbsp;B. bestimmte Abbildungen und Texte).</p>
+        <p>Daneben können ganze <b>Organisationen verboten</b> sein (z.&nbsp;B. Blood&nbsp;&amp;&nbsp;Honour, Combat&nbsp;18&nbsp;Deutschland, HDJ) – ihre Embleme fallen dann ebenfalls unter das Verbot.</p>
         <p>Wichtig: Das Verbot ist <b>kein absoluter Bann</b>. §&nbsp;86a StGB lässt die Verwendung für <b>Kunst, Wissenschaft, Forschung, Lehre oder die Berichterstattung über gegenwärtige oder vergangene Ereignisse</b> ausdrücklich zu – genau dieser Rahmen gilt auch für dieses Material.</p>
       </div>
       <div class="block">
@@ -673,7 +673,7 @@ footer{border-top:1px solid var(--line-soft);background:var(--bg2)}
         <h2>Warum „kontextabhängig“ so wichtig ist</h2>
         <p>Viele Symbole sind <b>nicht an sich verboten</b>, werden aber von der Szene als Erkennungszeichen genutzt – und umgekehrt gibt es Symbole, die völlig legal sind, in bestimmten Zusammenhängen aber problematisch werden.</p>
         <p>Wer einen <b>Thorshammer</b> trägt, ist deshalb noch lange kein Neonazi – das Motiv ist in Metal-, Fantasy- und Neuheiden-Szenen ebenso verbreitet. Erst die <b>Kombination</b> mit anderen Codes (z.&nbsp;B. 88, Runenketten, Szene-Marken) oder die Art der Nutzung (Grußformeln, Bünde, Demokontext) macht ein Symbol zum Indiz.</p>
-        <p>Umgekehrt gilt: Die <b>Wolfsangel</b> oder das <b>Odal-Rune</b> sind als „traditionelle“ Motive nicht pauschal verboten – wohl aber, wenn sie im Zusammenhang mit rechter Propaganda auftreten.</p>
+        <p>Umgekehrt gilt: Die <b>Wolfsangel</b> (ein historisches Jagdzeichen) oder die <b>Odal-Rune</b> sind nicht pauschal verboten – wohl aber, wenn sie im Zusammenhang mit rechter Propaganda auftreten.</p>
       </div>
       <div class="block">
         <h2>Das „Verwirrspiel“</h2>
@@ -778,8 +778,8 @@ const STATUS = {
 const SYMBOLS = [
   { id:"hakenkreuz", name:"Hakenkreuz", cat:"ns", st:"verboten",
     short:"Staatssymbol des „Dritten Reichs“",
-    def:"Das Hakenkreuz war das zentrale Symbol des Nationalsozialismus und das Emblem der NSDAP. Seine Verwendung in der Öffentlichkeit ist in Deutschland verboten – mit gesetzlichen Ausnahmen (z. B. Geschichtsdidaktik, Forschung, Kunst).",
-    ctx:"Bis heute eines der deutlichsten Kennzeichen neonazistischer Gesinnung – auf T-Shirts, Tattoos, Autos oder Graffiti. Erlaubt ist es nur im Rahmen von Bildung, Geschichte, Kunst oder der Berichterstattung (§ 86a StGB). OLG Zweibrücken (24.06.2026): In offenkundig kritischem Kontext (z. B. mit Davidstern verschmolzen, mahnende Darstellung) kann ein Hakenkreuz straffrei sein – die Distanzierung muss für einen neutralen Betrachter auf Anhieb erkennbar sein." },
+    def:"Das Hakenkreuz war das zentrale Symbol des Nationalsozialismus und das Emblem der NSDAP. Seine Verwendung in der Öffentlichkeit ist in Deutschland verboten – mit gesetzlichen Ausnahmen (z. B. Kunst, Wissenschaft, Forschung, Lehre, Berichterstattung).",
+    ctx:"Bis heute eines der deutlichsten Kennzeichen neonazistischer Gesinnung – auf T-Shirts, Tattoos, Autos oder Graffiti. Erlaubt ist es nur im Rahmen von Kunst, Wissenschaft, Forschung, Lehre oder Berichterstattung (§ 86a StGB). OLG Zweibrücken (24.06.2026): In offenkundig kritischem Kontext (z. B. mit Davidstern verschmolzen, mahnende Darstellung) kann ein Hakenkreuz straffrei sein – die Distanzierung muss für einen neutralen Betrachter auf Anhieb erkennbar sein." },
   { id:"reichsadler", name:"Reichsadler", cat:"ns", st:"kontext",
     short:"Symbol des Deutschen Reichs",
     def:"Der Adler ist seit Jahrhunderten ein Staatssymbol Deutschlands. Die Version mit Hakenkreuz auf der Brust und Eichenkranz ist der „Reichsadler“ des Dritten Reichs.",
@@ -787,7 +787,7 @@ const SYMBOLS = [
   { id:"hess", name:"Rudolf Heß", cat:"ns", st:"erlaubt",
     short:"Hitlers Stellvertreter, gilt als Märtyrer",
     def:"Rudolf Heß war Hitlers Stellvertreter in der NSDAP. 1941 flog er nach Großbritannien, wurde in Nürnberg zu lebenslanger Haft verurteilt und starb 1987 im Gefängnis.",
-    ctx:"In der neonazistischen Szene gilt er als „Märtyrer“. Sein Porträt – besonders das sogenannte „Hesse-Porträt“ – wird als versteckter Bezug zum NS-Regime genutzt, ohne Hitler direkt zu nennen." },
+    ctx:"In der neonazistischen Szene gilt er als „Märtyrer“. Sein Porträt – besonders das sogenannte „Heß-Porträt“ – wird als versteckter Bezug zum NS-Regime genutzt, ohne Hitler direkt zu nennen." },
   { id:"landser", name:"Landser", cat:"ns", st:"erlaubt",
     short:"Huldigung der Wehrmacht und verbotene Naziband",
     def:"„Landser“ war der umgangssprachliche Begriff für den einfachen Soldaten im Zweiten Weltkrieg. Heute steht das Wort sowohl für die Huldigung der Wehrmacht als auch für den Namen einer verbotenen Neonazi-Band.",
@@ -810,11 +810,11 @@ const SYMBOLS = [
     ctx:"Das Symbol ist nicht explizit verboten, aber eindeutig ein SS-Zeichen. In der Szene wird es gern als „dezentere“ Alternative zum Hakenkreuz verwendet." },
   { id:"wolfsangel", name:"Wolfsangel", cat:"ns", st:"kontext",
     short:"u. a. Zeichen für eine SS-Sondereinheit",
-    def:"Die Wolfsangel war ursprünglich ein traditioneller Jähkrog aus dem germanischen Raum. In der NS-Zeit diente sie u. a. als Zeichen einer Waffen-SS-Sondereinheit.",
-    ctx:"Wegen ihres „traditionellen“ Ursprungs nicht pauschal verboten – wohl aber im Zusammenhang mit rechter Propaganda. In der Szene als dezentes Symbol (z. B. am Kleidungsstück oder Tattoo) verbreitet." },
+    def:"Die Wolfsangel ist ein historisches Jagdgerät zum Fang von Wölfen – das stilisierte Zeichen taucht seit dem Mittelalter in Wappen und Grenzmarkierungen auf. In der NS-Zeit diente es u. a. als Emblem von Waffen-SS-Divisionen.",
+    ctx:"Nicht pauschal verboten – wohl aber, wenn es im Zusammenhang mit rechter Propaganda oder einem NS-Bezug steht. In der Szene als dezentes Symbol (z. B. am Kleidungsstück oder Tattoo) verbreitet." },
   { id:"totenkopf", name:"SS-Totenkopf", cat:"ns", st:"verboten",
     short:"Zeichen einer SS-Division",
-    def:"Der Totenkopf (Schädel) war das Emblem der Waffen-SS und der sogenannten „Totenkopfverbände“ der KZs.",
+    def:"Der Totenkopf war das Emblem der KZ-Wächter (SS-Totenkopfverbände) und wurde später auch von Einheiten der Waffen-SS getragen.",
     ctx:"Als Symbol einer verfassungswidrigen Organisation verboten. In der Szene oft mit weiteren Motiven kombiniert." },
   { id:"gauwinkel", name:"Gauwinkel", cat:"ns", st:"verboten",
     short:"Die NSDAP unterteilte das Land in Gaue",
@@ -834,7 +834,7 @@ const SYMBOLS = [
     ctx:"In der Szene u. a. in der Form „Odin statt Jesus“ als neuheidnischer, anti-christlicher Bezug. Ein Göttersymbol zu tragen, macht jemanden noch lange nicht zum Neonazi." },
   { id:"wikinger", name:"Wikinger", cat:"germ", st:"erlaubt",
     short:"„Reine Rasse“ nach arischem Vorbild",
-    def:"Der (gehörnte) Wikingerhelm ist ein romantisiertes Motiv der nordischen Zeit, beliebt in Metal- und Fantasy-Szenen.",
+    def:"Der (gehörnte) Wikingerhelm ist ein romantisiertes Motiv der nordischen Zeit, beliebt in der Metal- und Fantasy-Szene.",
     ctx:"In der neonazistischen Szene werden „Wikinger“ als „reine Rasse“ nach arischem Vorbild mythologisiert. Aber: Metalheads und Fantasy-Fans tragen das Motiv ebenfalls – allein ist es kein eindeutiges Kennzeichen." },
   { id:"thorshammer", name:"Thorshammer", cat:"germ", st:"erlaubt",
     short:"auch beliebt in der Metal-Szene und bei Neuheiden",
@@ -846,11 +846,11 @@ const SYMBOLS = [
     ctx:"Wird in neuheidnischen und neonazistischen Szenen verwendet. Nicht pauschal verboten – die Assoziation mit der Szene ist aber stark." },
   { id:"runen", name:"Runen", cat:"germ", st:"erlaubt",
     short:"Altnordische, germanische Zeichen",
-    def:"Runen sind Schriftzeichen der altnordischen und germanischen Schriftsysteme. Einzelne Runen (z. B. Tiwaz) oder Kombinationen (z. B. „88“) wurden von der Nazi-Szene vereinnahmt.",
+    def:"Runen sind Schriftzeichen der altnordischen und germanischen Schriftsysteme. Einzelne Runen (z. B. Tiwaz) wurden von der Nazi-Szene vereinnahmt – ebenso Zahlencodes wie „88“, die auf Buchstaben zurückgehen.",
     ctx:"Runen sind grundsätzlich kein Kennzeichen – sie erscheinen auch in Schmuck, Tattoos, Games und Fantasy. OVG Münster (7.10.2026): Lebens- und Todesrunen auf einem Grabmal sind keine Straftat – die Stadt durfte sie aber über die Friedhofssatzung verbieten, weil sie die Würde des Friedhofs verletzen können. Die Sigrune gilt dagegen als verbotenes NS-Kennzeichen (BayObLG 12.06.2026)." },
   { id:"npd", name:"NPD", cat:"org", st:"erlaubt",
     short:"Nationaldemokratische Partei Deutschlands",
-    def:"Die NPD (Nationaldemokratische Partei Deutschlands) ist eine rechtsextreme Partei; ihr Emblem zeigt die Anfangsbuchstaben im Kreis.",
+    def:"Die NPD (Nationaldemokratische Partei Deutschlands) ist eine rechtsextreme Partei; ihr Emblem zeigt die Buchstaben „NPD“ im Kreis.",
     ctx:"Das Logo ist nicht verboten, belegt aber eindeutig die Parteizuordnung. Die NPD wird vom Verfassungsschutz als rechtsextremistisch eingestuft; ein Verbotsantrag scheiterte 2017 am Bundesverfassungsgericht." },
   { id:"blood_honour", name:"Blood & Honour", cat:"org", st:"verboten",
     short:"Verbotene Organisation",
@@ -859,15 +859,15 @@ const SYMBOLS = [
   { id:"combat18", name:"Combat 18", cat:"org", st:"erlaubt",
     short:"Bewaffneter Arm von Blood & Honour",
     def:"Combat 18 (C18) ist der sogenannte bewaffnete Arm von Blood & Honour. Die Zahl 18 ist ein versteckter Bezug auf Adolf Hitler (A = 1, H = 8).",
-    ctx:"Das Logo ist in der Infografik nicht als verboten markiert, die Organisation gehört aber zum gewalttätigen neonazistischen Netzwerk. In der Szene wird die 18 als „AH“ gelesen." },
+    ctx:"In der Infografik (2012) ist das Logo nicht als verboten markiert – das hat sich geändert: Der deutsche Ableger „Combat 18 Deutschland“ wurde 2020 vom Bundesinnenministerium verboten. Seither ist auch das öffentliche Verwenden seiner Kennzeichen (C18-Schriftzug, Drache, Slogan „whatever it takes“) verboten. In der Szene wird die 18 als „AH“ gelesen." },
   { id:"jn", name:"JN", cat:"org", st:"erlaubt",
     short:"Junge Nationaldemokraten (Jugendorg. der NPD)",
     def:"Die JN (Junge Nationaldemokraten) ist die Jugendorganisation der NPD.",
     ctx:"Das eckige „JN“-Logo signalisiert die Zugehörigkeit zum jugendlichen Flügel der NPD." },
   { id:"hammerskins", name:"Hammerskins", cat:"org", st:"erlaubt",
     short:"Internationale Skinhead-Vereinigung",
-    def:"Die Hammerskins sind ein internationaler white-supremacist Skinhead-Verein; das Logo zeigt zwei gekreuzte Vorschlaghämmern.",
-    ctx:"Ein gewalttätiges internationales Netzwerk. Der Hammer allein ist ein neutrales Werkzeug – die gekreuzten Vorschlaghämmern sind dagegen ein klares Szenesymbol." },
+    def:"Die Hammerskins sind ein internationaler Skinhead-Verein für weiße Vorherrschaft (White Supremacy); das Logo zeigt zwei gekreuzte Vorschlaghämmer.",
+    ctx:"Ein gewalttätiges internationales Netzwerk. Der Hammer allein ist ein neutrales Werkzeug – die gekreuzten Vorschlaghämmer sind dagegen ein klares Szenesymbol." },
   { id:"anti_antifa", name:"Anti-Antifa", cat:"org", st:"erlaubt",
     short:"Begriff und Logo rechter Gruppierungen",
     def:"„Anti-Antifa“ ist ein von rechten Gruppen genutzter Begriff und Logo, um sich als Verteidiger gegen die „Antifa“ zu inszenieren.",
@@ -875,25 +875,25 @@ const SYMBOLS = [
   { id:"kameradschaft", name:"Freie Kameradschaft", cat:"org", st:"erlaubt",
     short:"Eigenständige, parteiungebundene Gruppen",
     def:"„Kameradschaften“ sind inoffizielle, parteiungebundene rechtsextreme Gruppen, die sich um lokale Treffpunkte und -lokale organisieren.",
-    ctx:"Nach Verbieten diverser Organisationen wurden die Kameradschaften zum Kern der lokalen Neonaziszene. Das Fraktur-Wort „Kameradschaft“ ist ein typisches Szenekennzeichen." },
+    ctx:"Nach dem Verbot verschiedener Organisationen wurden die Kameradschaften zum Kern der lokalen Neonaziszene. Das Fraktur-Wort „Kameradschaft“ ist ein typisches Szenekennzeichen." },
   { id:"kkk", name:"KKK-Kreuz", cat:"org", st:"erlaubt",
     short:"Ku-Klux-Klan, US-Rassisten",
     def:"Das KKK-Kreuz ist das Symbol des Ku-Klux-Klan (KKK), einer rassistischen Organisation in den USA.",
-    ctx:"International als Symbol weißer Vorherrschaft genutzt. In Deutschland ist der KKK nicht rechtlich etabliert – das Kreuz signalisiert white-supremacist Gesinnung." },
+    ctx:"International als Symbol weißer Vorherrschaft genutzt. In Deutschland ist der KKK nicht rechtlich etabliert – das Kreuz signalisiert die Gesinnung der weißen Vorherrschaft (White Supremacy)." },
   { id:"hdj", name:"HDJ", cat:"org", st:"verboten",
     short:"Heimattreue Deutsche Jugend (verbotener Verein)",
     def:"Die HDJ (Heimattreue Deutsche Jugend) ist ein rechtsextremer Jugendverein.",
-    ctx:"Als Verein verboten – die Verwendung seines Emblems ist unzulässig." },
+    ctx:"2009 vom Bundesinnenministerium verboten (2010 vom Bundesverwaltungsgericht bestätigt) – die Verwendung seines Emblems ist seither unzulässig." },
   { id:"white_power", name:"White-Power-Faust", cat:"code", st:"erlaubt",
     short:"Symbol für Überlegenheit der „weißen Rasse“",
-    def:"Die erhobene Faust mit der Aufschrift „White Power“ ist das zentrale Symbol des white supremacisms.",
-    ctx:"Die erhobene Faust stammt ursprünglich aus linken und Bürgerrechtsbewegungen – die „White Power“-Aufschrift macht sie aber zu einem eindeutigen white-supremacist-Symbol." },
+    def:"Die erhobene Faust mit der Aufschrift „White Power“ ist das zentrale Symbol des White Supremacys – der Ideologie von der Überlegenheit der „weißen Rasse“.",
+    ctx:"Die erhobene Faust stammt ursprünglich aus linken und Bürgerrechtsbewegungen – die „White Power“-Aufschrift macht sie aber zu einem eindeutigen White-Supremacy-Symbol." },
   { id:"keltenkreuz", name:"Keltenkreuz", cat:"code", st:"verboten",
     short:"Dieselbe Bedeutung wie die White-Power-Faust (* in einigen Bundesländern verboten)",
     def:"Das Keltenkreuz (Kreuz im Kreis) wird in der Szene mit derselben Bedeutung wie die White-Power-Faust genutzt: „Überlegenheit der weißen Rasse“.",
     ctx:"Laut Infografik in einigen Bundesländern verboten. Das Keltenkreuz hat auch keltische und heidnische Wurzeln – die szenetypische Bedeutung entsteht durch die Kombination mit rechtem Inhalt." },
   { id:"n1681", name:"168:1", cat:"code", st:"erlaubt",
-    short:"Anspielung auf rechten Terroranschlag in USA mit 168 Toten",
+    short:"Anspielung auf den rechten Terroranschlag in den USA mit 168 Toten",
     def:"„168:1“ verweist auf den Bombenanschlag von Oklahoma City (1995), bei dem 168 Menschen starben. Die rechte Szene verklärt ihn mit diesem Code.",
     ctx:"Ein Verweis auf rechten Terrorismus – auf T-Shirts, Stickern oder in Posts. Die „unverdächtige“ Zahl macht das Symbol schwer erkennbar." },
   { id:"kc", name:"KC / Kategorie C", cat:"code", st:"erlaubt",
@@ -903,7 +903,7 @@ const SYMBOLS = [
   { id:"n14words", name:"14 Words", cat:"code", st:"erlaubt",
     short:"Berüchtigte rassistische Rede eines US-Nazis aus 14 Wörtern",
     def:"Die „14 Words“ sind ein rassistisches Zitat des US-Neonazis David Lane aus dem Jahr 1992: „We must secure the existence of our people and a future for white children“.",
-    ctx:"Ein Kernstück der white-supremacist-Ideologie – auf T-Shirts, Tattoos und Stickern zu finden. Die Zahl 14 wird als Verweis auf das Zitat verwendet." },
+    ctx:"Ein Kernstück der White-Supremacy-Ideologie – auf T-Shirts, Tattoos und Stickern zu finden. Die Zahl 14 wird als Verweis auf das Zitat verwendet." },
   { id:"n18", name:"18", cat:"code", st:"erlaubt",
     short:"Erster und achter Buchstabe im Alphabet: Adolf Hitler",
     def:"18 = A (1. Buchstabe) + H (8. Buchstabe) – ein versteckter Bezug auf Adolf Hitler.",
@@ -919,14 +919,14 @@ const SYMBOLS = [
   { id:"h8", name:"H8", cat:"code", st:"erlaubt",
     short:"Englisch ausgesprochen: Hate = dt. Hass",
     def:"„H8“ wird englisch als „Hate“ (Hass) gelesen – ein typografischer Versteckcode.",
-    ctx:"Das „H“ ist wie ein „A“ geschrieben, sodass das Logo als „Hate“ gelesen wird – auf Kleidung und Stickern im Umlauf." },
+    ctx:"Das „8“ wird englisch wie „ate“ (a-te) gesprochen – zusammen mit dem „H“ ergibt das „Hate“ (Hass). Auf Kleidung und Stickern im Umlauf." },
   { id:"acab", name:"ACAB", cat:"code", st:"erlaubt",
     short:"All Cops are Bastards (wurde aus der Punkszene übernommen)",
     def:"ACAB = „All Cops Are Bastards“ – ein Slogan, der ursprünglich aus der Punk- und Linksszene stammt.",
     ctx:"Typisches „Verwirrspiel“: Rechte Gruppen nutzen ACAB ebenfalls (anti-staatlich/anti-autoritär), der Slogan ist aber primär links verortet. Neonazis nehmen ihn auf, um sich als „alternativ“ zu inszenieren." },
   { id:"war", name:"WAR", cat:"code", st:"erlaubt",
     short:"White Aryan Resistance",
-    def:"WAR = „White Aryan Resistance“ – ein white-supremacist-Slogan und Name einer Organisation.",
+    def:"WAR = „White Aryan Resistance“ – ein Slogan der White-Supremacy-Ideologie und zugleich Name einer rechtsextremen Organisation.",
     ctx:"Das Wort wirkt harmlos (war = Krieg), ist in der Szene aber ein Bezug auf „weißen Widerstand“." },
   { id:"zog", name:"ZOG", cat:"code", st:"erlaubt",
     short:"Zionist Occupied Government (zionistisch besetzte Regierung)",
@@ -946,16 +946,16 @@ const SYMBOLS = [
     ctx:"Eine Marke, die zum klassischen Indiz der Skinhead-Szene geworden ist." },
   { id:"alpha_industries", name:"Alpha-Industries", cat:"neutral", st:"erlaubt",
     short:"Beliebt wegen der Ähnlichkeit mit dem SA-Logo",
-    def:"„Alpha Industries“ ist eine (US-)Bekleidungsmarke, deren Logo (mit Blitz) dem SA-Logo ähnelt.",
-    ctx:"Die Firma selbst hat keinen Bezug zur Rechten – wegen der Ähnlichkeit zum SA-Logo ist die Marke aber in der Szene beliebt. Beispiel für das „Verwirrspiel“ zwischen Marke und Szene." },
+    def:"„Alpha Industries“ ist eine (US-)Bekleidungsmarke, deren Logo dem SA-Logo ähnelt.",
+    ctx:"Die Firma selbst hat keinen Bezug zur Rechten – wegen der Ähnlichkeit zum SA-Logo ist die Marke in der Szene aber beliebt. Ein Beispiel dafür, wie die Szene normale Marken für sich einnimmt." },
   { id:"ansgar_aryan", name:"Ansgar Aryan", cat:"brand", st:"erlaubt",
     short:"Die Saga der germanischen Mode",
     def:"„Ansgar Aryan“ ist eine rechtsextreme Modemarke, die Surfer-Designs mit offensiven Bezügen zum historischen Nationalsozialismus verbindet.",
-    ctx:"Laut Dokument: eine „Weapons“-Kollektion mit SS-Schusswaffen und ein Wehrmachtspanzer mit zynischem Spruch. Eine offen szenenah positionierte Marke." },
+    ctx:"Der fluter-Bericht beschreibt eine ganze „Weapons“-Kollektion mit Waffen der SS und Wehrmacht sowie einen Wehrmachtspanzer mit dem zynischen Spruch „Nach Frankreich fahren wir nur auf Ketten“. Eine offen szenenah positionierte Marke." },
   { id:"thor_steinar", name:"Thor Steinar", cat:"brand", st:"erlaubt",
     short:"Nicht nur bei Neonazis beliebt, aber bei denen auf jeden Fall",
     def:"„Thor Steinar“ ist eine Modemarke mit Runen-Logos und völkischen Motiven (z. B. „Weidmanns Heil“, „Hausbesuche“).",
-    ctx:"Das Runenlogo war zeitweise wegen Ähnlichkeit mit NS-Symbolen verboten, bis ein Gericht das Verbot aufhob. Die Marke ist längst im Mainstream – in der Szene bleibt sie aber ein starkes Merkmal." },
+    ctx:"Das alte Runenlogo (Kombination aus Tyr-Rune und Wolfsangel) wurde 2004 nach § 86a StGB verboten – die Marke nutzt seitdem ein abgeändertes Logo. Im Mainstream längst normal, in der Szene aber ein starkes Erkennungszeichen." },
   { id:"lonsdale", name:"Lonsdale", cat:"neutral", st:"erlaubt",
     short:"Beliebt wegen des „nsda“ im Logo",
     def:"„Lonsdale“ ist eine Sportmarke, deren Logo die Buchstaben „nsda“ enthält – einen versteckten Bezug zur NSDAP.",
@@ -974,8 +974,8 @@ const SYMBOLS = [
     ctx:"Eine offen szenenah positionierte Marke mit Wikinger-Motiven." },
   { id:"good_night", name:"Good night left side", cat:"left", st:"erlaubt",
     short:"Verunglimpfung von „good night white pride“",
-    def:"„Good night left side“ ist ein Slogan, der sich auf den white-supremacist-Slogan „good night white pride“ bezieht und ihn verunglimpft.",
-    ctx:"Typisches „Verwirrspiel“: Die Phrase spielt mit links/rechts und wird als ironische Provokation verwendet – genau das macht sie schwer einordbar." },
+    def:"„Good night left side“ ist die neonazistische Verkehrung von „Good Night White Pride“ – einer antifaschistischen Kampagne, die Ende der 1990er Jahre in der deutschen Hardcore-Szene entstand. Der Slogan steht für Gewalt gegen die linke Szene.",
+    ctx:"Typisches „Verwirrspiel“: Die rechte Szene kehrt einen antifaschistischen Slogan um und inszeniert damit Gewalt gegen Linke – auf Shirts, Buttons, Aufklebern und Konzertplakaten, häufig zusammen mit Motiven, die Schlägereien oder Schusswaffen zeigen." },
   { id:"pali", name:"Pali-Tuch", cat:"left", st:"erlaubt",
     short:"Hass auf Juden eint radikale Palästinenser und Neonazis",
     def:"Das „Pali-Tuch“ ist ein Tuch aus der palästinensischen Intifada. In der Neonaziszene wird es als antisemitisches Statement getragen.",
@@ -1021,7 +1021,7 @@ const STATEMENTS = [
   { t:"Der Gauwinkel mit dem Schriftzug „Sachsen“ ist in Deutschland verboten.", ok:true,
     why:"Ja. Der Gauwinkel war ein Eckband der NSDAP und ist in der Infografik als verboten gekennzeichnet." },
   { t:"Die „14 Words“ sind ein rassistisches Zitat aus 14 Wörtern, das in der Szene kursiert.", ok:true,
-    why:"Ja. Das Zitat stammt von dem US-Neonazi David Lane (1992) und gilt als Kernstück der white-supremacist-Ideologie." },
+    why:"Ja. Das Zitat stammt von dem US-Neonazi David Lane (1992) und gilt als Kernstück der White-Supremacy-Ideologie." },
   { t:"Der Reichsadler ohne Hakenkreuz ist in Deutschland grundsätzlich erlaubt – als traditionelles Staatssymbol.", ok:true,
     why:"Ja. Der Adler ist seit Jahrhunderten deutsches Staatssymbol und Teil des heutigen Bundeswappens. Die NS-Version ist im Zusammenhang mit rechter Propaganda verboten." },
   { t:"Runen sind niemals strafbar – selbst auf dem Grabstein eines Neonazis dürfte sie niemand verbieten.", ok:false,
