@@ -43,6 +43,15 @@
   --bad:#f85149;
   --bad-soft:rgba(248,81,73,.12);
   --paper:#f4f1ea;
+  /* Kategorie-Farben 1:1 aus der Infografik (fluter Nr. 42, S. 25/26) */
+  --cat-ns:#ffd77d;
+  --cat-org:#e1b7b6;
+  --cat-germ:#91c5ea;
+  --cat-code:#a9d486;
+  --cat-brand:#fdbc86;
+  --cat-neutral:#fdd5b6;
+  --cat-neutral-line:#fbbe8a;
+  --cat-left:#ffffff;
   --radius:14px;
   --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
 }
@@ -243,6 +252,10 @@ main{flex:1;width:100%;max-width:1180px;margin:0 auto;padding:0 24px 80px}
   font-size:11px;font-weight:700;color:var(--muted);
   padding:4px 9px;border-radius:6px;background:var(--bg2);border:1px solid var(--line);
 }
+.chip .cdot,.tag .cdot{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  margin-right:6px;vertical-align:0;flex:none;
+}
 
 /* ---------- modal ---------- */
 .modal-backdrop{
@@ -388,6 +401,22 @@ main{flex:1;width:100%;max-width:1180px;margin:0 auto;padding:0 24px 80px}
 .review .row.bad .ix{background:var(--bad-soft);color:var(--bad);border-color:rgba(248,81,73,.4)}
 .review .row .art{background:var(--paper);border-radius:8px;width:52px;height:52px;flex:none;display:grid;place-items:center}
 .review .row .art svg,.review .row .art img{width:38px;height:38px;object-fit:contain}
+/* Kategorie-Farbe: hinter jedem Symbolbild (muss nach den paper-Regeln stehen) */
+.cat-tile.cat-ns{background:var(--cat-ns)}
+.cat-tile.cat-org{background:var(--cat-org)}
+.cat-tile.cat-germ{background:var(--cat-germ)}
+.cat-tile.cat-code{background:var(--cat-code)}
+.cat-tile.cat-brand{background:var(--cat-brand)}
+.cat-tile.cat-neutral{background:repeating-linear-gradient(135deg,var(--cat-neutral) 0 6px,var(--cat-neutral-line) 6px 8px)}
+.cat-tile.cat-left{background:var(--cat-left)}
+/* Review-Liste braucht höhere Spezifität als .review .row .art */
+.review .row .art.cat-tile.cat-ns{background:var(--cat-ns)}
+.review .row .art.cat-tile.cat-org{background:var(--cat-org)}
+.review .row .art.cat-tile.cat-germ{background:var(--cat-germ)}
+.review .row .art.cat-tile.cat-code{background:var(--cat-code)}
+.review .row .art.cat-tile.cat-brand{background:var(--cat-brand)}
+.review .row .art.cat-tile.cat-neutral{background:repeating-linear-gradient(135deg,var(--cat-neutral) 0 6px,var(--cat-neutral-line) 6px 8px)}
+.review .row .art.cat-tile.cat-left{background:var(--cat-left)}
 .review .row .txt{min-width:0}
 .review .row .txt b{display:block;font-size:13.5px;margin-bottom:2px;overflow-wrap:break-word}
 .review .row .txt .ans{color:var(--muted)}
@@ -988,6 +1017,7 @@ const STATEMENTS = [
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const artOf = s => ART[s.id] || "";
+const catCls = s => s ? `cat-tile cat-${s.cat}` : "";
 
 function mulberry32(seed) {
   return function() {
@@ -1033,12 +1063,12 @@ function openModal(s) {
     <div class="modal-backdrop" id="modal-backdrop">
       <div class="modal" role="dialog" aria-modal="true" aria-label="${s.name}">
         <div class="m-head">
-          <div class="m-art">${artOf(s)}</div>
+          <div class="m-art ${catCls(s)}">${artOf(s)}</div>
           <div>
             <h3>${s.name}</h3>
             <div class="badges">
               <span class="badge ${s.st}">${st.short}</span>
-              <span class="tag">${cat.short}</span>
+              <span class="tag"><span class="cdot" style="background:var(--cat-${s.cat})"></span>${cat.short}</span>
             </div>
           </div>
           <button class="close" id="modal-close" aria-label="Schließen">✕</button>
@@ -1066,7 +1096,7 @@ function renderChips() {
   cats.innerHTML =
     `<button class="chip ${atlasState.cat === "all" ? "active" : ""}" data-cat="all">Alle Kategorien</button>` +
     Object.entries(CATS).map(([k, c]) =>
-      `<button class="chip ${atlasState.cat === k ? "active" : ""}" data-cat="${k}">${c.short}</button>`).join("");
+      `<button class="chip ${atlasState.cat === k ? "active" : ""}" data-cat="${k}"><span class="cdot" style="background:var(--cat-${k})"></span>${c.short}</button>`).join("");
   cats.onclick = e => {
     const b = e.target.closest("button[data-cat]");
     if (!b) return;
@@ -1096,13 +1126,13 @@ function renderAtlas() {
   $("#atlas-count").textContent = `${list.length} von ${SYMBOLS.length} Symbolen`;
   $("#atlas-grid").innerHTML = list.map(s => `
     <article class="symbol-card" data-id="${s.id}" tabindex="0" role="button" aria-label="${s.name} – Details">
-      <div class="art">${artOf(s)}</div>
+      <div class="art ${catCls(s)}">${artOf(s)}</div>
       <div class="body">
         <div class="name">${s.name}</div>
         <div class="desc">${s.short}</div>
         <div class="badges">
           <span class="badge ${s.st}">${STATUS[s.st].short}</span>
-          <span class="tag">${CATS[s.cat].short}</span>
+          <span class="tag"><span class="cdot" style="background:var(--cat-${s.cat})"></span>${CATS[s.cat].short}</span>
         </div>
       </div>
     </article>`).join("");
@@ -1218,7 +1248,7 @@ function renderQuestion() {
       <p class="q-statement">„${q.statement.t}“</p>`;
   } else {
     top = `<span class="q-type">${TYPE_LABEL[q.type]}</span>
-      <div class="q-symbol">${artOf(q.symbol)}</div>
+      <div class="q-symbol ${catCls(q.symbol)}">${artOf(q.symbol)}</div>
       <p class="q-question">${q.q}</p>`;
   }
   top += `<div class="q-options" role="group" aria-label="Antworten">` +
@@ -1266,9 +1296,9 @@ function answer(idx) {
   if (q.symbol) {
     const s = q.symbol, st = STATUS[s.st];
     symHtml = `
-      <div class="fb-art">${artOf(s)}</div>
+      <div class="fb-art ${catCls(s)}">${artOf(s)}</div>
       <div class="fb-body">
-        <div class="n">${s.name} <span class="badge ${s.st}">${st.short}</span> <span class="tag">${CATS[s.cat].short}</span></div>
+        <div class="n">${s.name} <span class="badge ${s.st}">${st.short}</span> <span class="tag"><span class="cdot" style="background:var(--cat-${s.cat})"></span>${CATS[s.cat].short}</span></div>
         <p>${s.def}</p>
         <p style="margin-top:6px">${s.ctx}</p>
       </div>`;
@@ -1346,7 +1376,7 @@ function showResults() {
         const correct = a.q.options.find(o => o.ok).t;
         return `<div class="row ${a.ok ? "ok" : "bad"}">
           <div class="ix">${a.ok ? "✓" : "✕"}</div>
-          ${s ? `<div class="art">${artOf(s)}</div>` : ""}
+          ${s ? `<div class="art ${catCls(s)}">${artOf(s)}</div>` : ""}
           <div class="txt">
             <b>${i + 1}. ${s ? s.name : "Kontext-Frage"} <span style="font-weight:400;color:var(--faint);font-size:11.5px">· ${TYPE_LABEL[a.q.type]}</span></b>
             ${a.ok ? `<span class="ans"><span class="good">${a.picked}</span></span>`
